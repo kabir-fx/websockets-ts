@@ -28,6 +28,8 @@ websocketServer.on("connection", (socket) => {
           socket: socket,
           room: parsedMsg.payload.roomId
         })
+
+        socket.send("Connected to Room: " + parsedMsg.payload.roomId);
       } else {
         /*
         Send a message in a Room:
